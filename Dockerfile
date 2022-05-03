@@ -8,6 +8,10 @@ ENV PYTHONUNBUFFERED True
 # Set default env vars to clear CI
 #ENV PROVIDER GCP
 
+
+#python -m pip install -U pip or python3 -m pip install -U pip
+#pip3 install --upgrade setuptools
+
 ENV APP_HOME /app
 
 COPY ./main.py $APP_HOME/
@@ -25,6 +29,8 @@ RUN echo $(ls)
 
 
 RUN apt-get update
+RUN apt-get install python-dev
+RUN apt-get install build-essential
 RUN apt-get install -y python3-pip
 RUN pip install --upgrade pip
 
