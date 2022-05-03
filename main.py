@@ -15,7 +15,7 @@ import numpy as np
 
 from h2ox.reducer import XRReducer, BQClient, reduce_timeperiod_to_df
 from h2ox.reducer.slackbot import SlackMessenger
-from h2ox.reducer.gcp_utils import download_blob_to_filename, upload_blob
+from h2ox.reducer.gcp_utils import download_blob_to_filename, upload_blob, create_task, deploy_task
 
 
 app = Flask(__name__)
@@ -157,7 +157,6 @@ def main_loop(
     # 6a. Tigge:
     forecast_rows = 0
     for unq_dt in max_date_df['date'].unique():
-        print (unq_dt, tigge_dt, type(unq_dt), type(tigge_dt))
         if unq_dt< np.datetime64(tigge_dt):
             
             sites = max_date_df.loc[max_date_df['date']==unq_dt,'reservoir'].values
