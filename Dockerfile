@@ -31,8 +31,11 @@ RUN echo $(ls)
 RUN apt-get update
 RUN apt-get install -y python-dev
 RUN apt-get install -y build-essential
-RUN apt-get install -y python3-pip
-RUN pip install --upgrade pip
+RUN python -m pip install -U pip
+#RUN apt-get install -y python3-pip
+#RUN pip install --upgrade pip
+
+RUN echo $(which pip)
 
 # install binaries for cfgrib
 # RUN apt-get install -y libeccodes0
