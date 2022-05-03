@@ -122,7 +122,7 @@ def main_loop(
     if target_spec is None:
         target_spec = json.loads(os.environ.get("target_spec"))
     if requeue is None:
-        requeue  = os.environ.get("requeue")
+        requeue  = os.environ.get("requeue")=="true"
         
     
         
