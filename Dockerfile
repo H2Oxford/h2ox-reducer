@@ -31,9 +31,10 @@ RUN echo $(ls)
 RUN apt-get update
 RUN apt-get install -y python-dev
 RUN apt-get install -y build-essential
-RUN python3 -m pip install -U pip
-RUN pip3 install --upgrade setuptools
-#RUN apt-get install -y python3-pip
+RUN apt-get install -y python3-pip
+#RUN python3 -m pip install -U pip
+RUN pip install --upgrade setuptools
+#
 #RUN pip install --upgrade pip
 
 RUN echo $(which pip)
