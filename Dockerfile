@@ -30,19 +30,23 @@ RUN echo $(ls)
 
 RUN apt-get update
 RUN apt-get install -y build-essential
-RUN apt-get install -y python-dev python-pip
+RUN apt-get install -y python-dev python3-pip
 #RUN python3 -m pip install -U pip
 RUN pip install --upgrade setuptools
 #
 #RUN pip install --upgrade pip
 
 RUN echo $(which pip)
+RUN echo $(which pip3)
+RUN echo $(which python)
+RUN echo $(which python3)
+RUN echo $USER
 
 # install binaries for cfgrib
 # RUN apt-get install -y libeccodes0
 
 # Install production dependencies.
-RUN pip install --no-cache-dir -e ./h2ox-reducer
+RUN pip3 install ./h2ox-reducer
 
 # Run the web service on container startup. Here we use the gunicorn
 # webserver, with one worker process and 8 threads.
