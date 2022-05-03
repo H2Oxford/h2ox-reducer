@@ -31,7 +31,7 @@ RUN apt-get install -y python3-pip
 RUN apt-get install -y libeccodes0
 
 # Install production dependencies.
-RUN pip install --no-cache-dir -e ./h2ox-reducer
+RUN pip install ./h2ox-reducer
 
 # Run the web service on container startup. Here we use the gunicorn
 # webserver, with one worker process and 8 threads.
