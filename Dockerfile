@@ -29,8 +29,8 @@ RUN echo $(ls)
 
 
 RUN apt-get update
-RUN apt-get install python-dev
-RUN apt-get install build-essential
+RUN apt-get install -y python-dev
+RUN apt-get install -y build-essential
 RUN apt-get install -y python3-pip
 RUN pip install --upgrade pip
 
