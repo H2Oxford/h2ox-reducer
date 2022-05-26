@@ -93,12 +93,19 @@ def main():
         msg = "invalid task format"
         print(f"error: {msg}")
         return f"Bad Request: {msg}", 400
+    
+    token=os.environ.get("SLACKBOT_TOKEN")
+    target=os.environ.get("SLACKBOT_TARGET")
+    
+    if token is not None and target is not None:
 
-    slackmessenger = SlackMessenger(
-        token=os.environ.get("SLACKBOT_TOKEN"),
-        target=os.environ.get("SLACKBOT_TARGET"),
-        name="h2ox-reduction",
-    )
+        slackmessenger = SlackMessenger(
+            token=token,
+            target=target,
+            name="h2ox-reduction",
+        )
+    else:
+        slackmessenger=None
 
     today_str = payload["today"]
 
@@ -122,9 +129,9 @@ def main_loop(
     if chirps_token_path is None:
         chirps_token_path = os.environ.get("CHIRPS_TOKEN_PATH")
     if target_spec is None:
-        target_spec = json.loads(os.environ.get("target_spec"))
+        target_spec = json.loads(os.environ.get("TARGET_SPEC"))
     if requeue is None:
-        requeue  = os.environ.get("requeue")=="true"
+        requeue  = os.environ.get("REQUEUE")=="true"
         
     
         
