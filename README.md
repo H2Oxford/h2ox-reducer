@@ -101,5 +101,5 @@ Reduced xarray `arrays` are lazily computed, they need to be called with `.compu
 
 Our Wave2Web submission can be cited as:
 
-    <citation here>
+    Kruitwagen, L., Arderne, C., Lees, T., Thalheimer, L, Kuzma, S., & Basak, S. (2022): Wave2Web: Near-real-time reservoir availability prediction for water security in India. Preprint submitted to EarthArXiv, doi: 10.31223/X5V06F. Available at https://eartharxiv.org/repository/view/3381/
 
