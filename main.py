@@ -17,6 +17,9 @@ from h2ox.reducer import XRReducer, BQClient, reduce_timeperiod_to_df
 from h2ox.reducer.slackbot import SlackMessenger
 from h2ox.reducer.gcp_utils import download_blob_to_filename, upload_blob, create_task, deploy_task
 
+logger.remove()
+logger.add(sys.stdout, colorize=False, format="{time:YYYYMMDDHHmmss}|{level}| {message}")
+
 
 app = Flask(__name__)
 
