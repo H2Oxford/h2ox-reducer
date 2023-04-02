@@ -31,7 +31,7 @@ RUN echo $(ls)
 
 RUN apt-get update
 RUN apt-get install -y build-essential
-RUN apt-get install -y python-dev python3-pip
+RUN apt-get install -y python3 python3-pip
 #RUN python3 -m pip install -U pip
 RUN pip install --upgrade setuptools
 #
