@@ -17,7 +17,7 @@ def reduce_timeperiod_to_df(
 ):
     
     # map the zxr
-    mapper = GCSFileSystem().get_mapper
+    mapper = GCSFileSystem(requester_pays=True).get_mapper
     zx_arr = xr.open_zarr(mapper(target_spec['url']))
 
     # reduce the xarray object for each variable - geometry
