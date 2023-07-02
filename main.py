@@ -150,7 +150,7 @@ def main_loop(
     tigge_token = json.load(open(tigge_token_local_path,'r'))
     chirps_token = json.load(open(chirps_token_local_path,'r'))
     
-    tigge_dt = datetime.strptime(tigge_token['most_recent_tigge'],'%Y-%m-%d')
+    tigge_dt = datetime.strptime(tigge_token['most_recent_tigge'],'%Y-%m-%d') - timedelta(days=1)
     chirps_dt = datetime.strptime(chirps_token['last_prelim'],'%Y-%m-%d') 
     logger.info(f'Got most recent datetimes: tigge: {tigge_dt}, chirps: {chirps_dt}')
     
