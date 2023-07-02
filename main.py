@@ -123,7 +123,7 @@ def main_loop(
     tigge_token_path: Optional[str] = None,
     chirps_token_path: Optional[str] = None,
     target_spec: Optional[dict] = None,
-    requeue: Optional[bool] = True
+    requeue: Optional[bool] = False
 ):
 
     # 1. get variables from environment or args
